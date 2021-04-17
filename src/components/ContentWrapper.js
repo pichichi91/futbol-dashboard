@@ -1,0 +1,41 @@
+
+import { Route, Switch } from "react-router-dom";
+import { PlayerList, PlayerDetail, ClubList } from "./index"
+import styled from "styled-components"
+
+const ContentWrapper = () => (
+
+    <Content>
+        <Switch>
+            <Route exact="true" path="/players">
+                <PlayerList />
+            </Route>
+            <Route exact="true" path="/players/:id">
+                <PlayerDetail />
+            </Route>
+            <Route path="/clubs">
+                <ClubList />
+            </Route>
+            <Route path="/recent">
+            </Route>
+            <Route path="/">
+            </Route>
+        </Switch>
+    </Content>
+)
+
+const Content = styled.div`
+width: 100%;
+min-height: 100vh;
+    padding: 80px;
+    @media screen and (max-width: 600px) {
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 100px;
+      padding-top: 40px;
+
+`
+
+
+
+export { ContentWrapper };
