@@ -75,6 +75,8 @@ const Logo = styled.img`
 
   @media screen and (max-width: 600px) {
     width: 50px;
+    display: none;
+
   height: auto;
   }
 `
@@ -159,6 +161,7 @@ svg {
 font-size: 3em;
 @media screen and (max-width: 600px) {
 font-size: 2.5em;
+display: none;
 }
 color: white;
 opacity: 0.5;
