@@ -11,10 +11,10 @@ const Home = () => (
 
             </Subtitle>
             <Description>
-                Chat about your favorite players and teams. Watch awesome videos. Show your skills and share your passion for the game. All in one place.
+                Chat about your favorite players and teams. Watch awesome videos. Show your skills and share your passion for the game. <strong>All in one place.</strong>
 
 
-         </Description>
+            </Description>
             <ButtonBox>
                 <Button>Get Access via TestFlight</Button>
             </ButtonBox>
@@ -47,10 +47,15 @@ border-color: #1271ed;
 `
 
 const Image = styled.img`
+    align-self: center;
+    @media screen and (max-width: 800px) {
+        margin-top: 1em;
+    }
 
 
 `
 const Description = styled.div`
+
 margin-top: 4em;
 padding:1.5em;
 border-radius: 10px;
@@ -59,22 +64,28 @@ border-radius: 10px;
     font-size: 1.2em;
     text-align: center;
     color: #1271ed;
-    font-weight: 500;
-box-shadow: 0 0px 12px rgb(0 0 0 / 20%);
-`
+    font-weight: 400;
+    box-shadow: 0 0px 20px rgb(18 113 237 / 30%);
+    `
 
 const Subtitle = styled.h2`
 font-size: 2.5em;
 font-weight: 900;
 text-align: center;
 color: #1271ed;
+@media screen and (max-width: 800px) {
+    font-size: 2em;
+    margin-top: 1em;
+}
 `
 
 
 const Container = styled.div`
-width: 60%;
+width: 800px;
+display: flex;
+flex-direction: column;
 @media screen and (max-width: 800px) {
-width: 100%
+width: 80%
 }
 `
 

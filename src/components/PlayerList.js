@@ -64,12 +64,18 @@ const PlayerList = () => {
 
     ]
     return (
-        <>
+        <Box>
             <Title>Top Players</Title>
             <ItemGrid items={player_data} Image={Image} />
-        </>
+        </Box>
     );
 }
+
+const Box = styled.div`
+    @media screen and (max-width: 600px) {
+    margin-bottom: 100px;
+
+`
 
 const Title = styled.h1`
 font-weight: 900;

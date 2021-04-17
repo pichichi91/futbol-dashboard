@@ -17,12 +17,18 @@ const ClubList = () => {
 
     ]
     return (
-        <>
+        <Box>
             <Title>Top Clubs</Title>
             <ItemGrid items={club_data} Image={Image} />
-        </>
+        </Box>
     );
 }
+
+const Box = styled.div`
+    @media screen and (max-width: 600px) {
+    margin-bottom: 100px;
+
+`
 
 const Title = styled.h1`
 font-weight: 900;
