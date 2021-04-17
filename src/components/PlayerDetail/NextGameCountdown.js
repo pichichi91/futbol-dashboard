@@ -68,20 +68,21 @@ font-weight:900;
 const Row = styled.div`
 display: flex;
 justify-content: center;
+background: #a9a9a926;
+    border-radius: 10px;
+    margin-top: 2em;
 `
 
 const CountdownItem = styled.div`
     margin-top: 2em;
 }
 
-width: 40%;
 @media screen and (max-width: 1100px) {
     width: 80%;
 }
 
-@media screen and (max-width: 800px) {
-    width: 100%;
-}
+
+width: 40%;
 
 font-size: 1.5em;
 margin-bottom: 1em;
