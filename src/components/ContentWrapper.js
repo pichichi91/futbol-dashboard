@@ -1,6 +1,6 @@
 
 import { Route, Switch } from "react-router-dom";
-import { PlayerList, PlayerDetail, ClubList } from "./index"
+import { PlayerList, PlayerDetail, ClubList, Home } from "./index"
 import styled from "styled-components"
 
 const ContentWrapper = () => (
@@ -16,9 +16,9 @@ const ContentWrapper = () => (
             <Route path="/clubs">
                 <ClubList />
             </Route>
-            <Route path="/recent">
-            </Route>
+
             <Route path="/">
+                <Home />
             </Route>
         </Switch>
     </Content>
