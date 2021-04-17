@@ -2,7 +2,7 @@ import logo from '../logo.png';
 import styled from "styled-components"
 
 import { FiGithub as GithubIcon } from 'react-icons/fi';
-import { MdHistory, MdHome } from "react-icons/md";
+import { MdHome } from "react-icons/md";
 import { GiPoliceBadge, GiSoccerKick } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 
@@ -43,12 +43,7 @@ const Navbar = () => {
             <MenuText>Clubs</MenuText>
           </ItemBox>
         </NavLink>
-        <NavLink to="/recent">
-          <ItemBox>
-            <MdHistory />
-            <MenuText>Recent</MenuText>
-          </ItemBox>
-        </NavLink>
+
       </Items>
 
       <Repository>
