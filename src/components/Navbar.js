@@ -33,7 +33,7 @@ const Navbar = () => {
 
 
             <GiSoccerKick />
-            <MenuText>Players</MenuText>
+            <MenuText>Profiles</MenuText>
           </ItemBox>
         </NavLink>
         <NavLink to="/clubs">
