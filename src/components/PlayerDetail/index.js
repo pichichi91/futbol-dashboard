@@ -22,7 +22,7 @@ const PlayerDetail = () => {
     if (!player) return <>Sorry, this Player doesn't exist</>
 
     return (
-        <>
+        <Box>
 
             <Row><Image src={player.imageURL}></Image></Row>
             <Row>
@@ -45,11 +45,31 @@ const PlayerDetail = () => {
             </ContentRow>
 
            
-        </>
+        </Box>
     )
 
 }
 
+
+const Box = styled.div`
+
+    @media screen and (max-width: 600px) {
+    overflow-y: scroll;
+    max-height: 85vh;
+
+padding-right: 1em;
+    }
+    ::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1271ed;
+}
+
+
+
+`
 
 
 

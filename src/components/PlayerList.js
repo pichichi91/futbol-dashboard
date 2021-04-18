@@ -72,8 +72,21 @@ const PlayerList = () => {
 }
 
 const Box = styled.div`
+
     @media screen and (max-width: 600px) {
-    margin-bottom: 100px;
+    overflow-y: scroll;
+    max-height: 87vh;
+
+    }
+    ::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1271ed;
+}
+
+
 
 `
 

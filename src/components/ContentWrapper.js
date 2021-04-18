@@ -32,7 +32,7 @@ min-height: 100vh;
     @media screen and (max-width: 600px) {
       padding: 10px;
       text-align: center;
-      padding-top: 40px;
+      padding-top: 20px;
       margin-top:0
 
 `
