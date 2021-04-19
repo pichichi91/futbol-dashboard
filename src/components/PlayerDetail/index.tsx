@@ -74,6 +74,8 @@ const Box = styled.div`
     max-height: 85vh;
 
 padding-right: 1em;
+padding-left: 1em;
+
     }
     ::-webkit-scrollbar {
   width: 0.5em;

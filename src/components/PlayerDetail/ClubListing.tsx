@@ -34,15 +34,16 @@ justify-content: center;
 `
 const Clublist = styled.div`
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 margin-bottom: 2em;
+
+width: 300px;
+
 img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
 }
-img:first-of-type {
-    margin-right: 2em;
-}
+
 `
 
 const ClubImage = styled.img`
