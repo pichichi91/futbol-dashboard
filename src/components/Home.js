@@ -44,6 +44,12 @@ box-shadow: 0 0px 12px rgb(0 0 0 / 20%);
 color: #1271ed;
 border-color: #1271ed;
 }
+
+@media screen and (max-width: 800px) {
+margin-bottom: 1em;
+}
+
+
 `
 
 const Image = styled.img`
@@ -56,9 +62,9 @@ const Image = styled.img`
 `
 const Description = styled.div`
 
-margin-top: 4em;
-padding:1.5em;
-border-radius: 10px;
+    margin-top: 4em;
+    padding:1.5em;
+    border-radius: 10px;
     border: 1px solid #1271ed;
     color: black;
     font-size: 1.2em;
@@ -91,7 +97,19 @@ width: 80%
 
 const Flex = styled.div` 
 display: flex;
-justify-content: center
+justify-content: center;
+@media screen and (max-width: 800px) {
+    overflow-y: scroll;
+    max-height: calc(100vh - 95px );
+    margin-bottom: 1em
+    }
+    ::-webkit-scrollbar {
+        width: 0.5em;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #1271ed;
+    }
 `
 
 export { Home };

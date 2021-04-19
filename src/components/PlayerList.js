@@ -75,16 +75,15 @@ const Box = styled.div`
 
     @media screen and (max-width: 600px) {
     overflow-y: scroll;
-    max-height: 87vh;
-
+    max-height: calc(100vh - 95px );
     }
     ::-webkit-scrollbar {
-  width: 0.5em;
-}
+        width: 0.5em;
+    }
 
-::-webkit-scrollbar-thumb {
-  background-color: #1271ed;
-}
+    ::-webkit-scrollbar-thumb {
+        background-color: #1271ed;
+    }
 
 
 
