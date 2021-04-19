@@ -54,8 +54,10 @@ margin-bottom: 1em;
 
 const Image = styled.img`
     align-self: center;
+    width: 100%;
     @media screen and (max-width: 800px) {
         margin-top: 1em;
+        max-width: 100%;
     }
 
 
