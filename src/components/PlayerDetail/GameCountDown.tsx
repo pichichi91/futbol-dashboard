@@ -84,9 +84,9 @@ const NextGame = styled.div`
 font-size: 2em;
 text-align: center;
 font-weight:900;
-@media screen and (max-width: 600px) {
 margin-bottom: 0.5em;
-}
+
+
 
 `
 
@@ -100,10 +100,10 @@ background: #a9a9a926;
 
 const CountdownItem = styled.div`
     margin-top: 2em;
+    margin-bottom: 2em;
 
 @media screen and (max-width: 1100px) {
     width: 90%;
-    margin-bottom: 2em;
 
 }
 
@@ -111,7 +111,6 @@ const CountdownItem = styled.div`
 width: 40%;
 
 font-size: 1.5em;
-margin-bottom: 1em;
 
 strong {
     text-transform: uppercase;

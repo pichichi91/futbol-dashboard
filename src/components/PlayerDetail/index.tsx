@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components"
-import { GameCountDown } from "./GameCountDown";
+import { GameCountDown } from "./GameCountdown";
 import { MediaGallery } from "./MediaGallery";
 import {ClubListing} from "./ClubListing"
 import { UrlBox } from "./UrlBox";
