@@ -55,7 +55,7 @@ const Navbar = () => {
       </Items>
 
       <Repository>
-        <a href="//"> <GithubIcon /></a>
+        <a href="//github.com/pichichi91/gloria-player"> <GithubIcon /></a>
 
       </Repository>
 
