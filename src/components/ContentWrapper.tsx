@@ -7,10 +7,10 @@ const ContentWrapper = () => (
 
     <Content>
         <Switch>
-            <Route exact="true" path="/players">
+            <Route exact={true} path="/players">
                 <PlayerList />
             </Route>
-            <Route exact="true" path="/players/:id">
+            <Route exact={true}  path="/players/:id">
                 <PlayerDetail />
             </Route>
             <Route path="/clubs">

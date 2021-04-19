@@ -1,7 +1,11 @@
 import styled from "styled-components"
 import { SRLWrapper } from "simple-react-lightbox";
 
-const MediaGallery = ({ media }) => (
+interface Props {
+    media: Array<string>
+}
+
+const MediaGallery = ({ media: mediaItems }: Props) => (
 
     <Box>
         <SubTitle>Fotos & Videos</SubTitle>
@@ -9,7 +13,7 @@ const MediaGallery = ({ media }) => (
 
             <MediaGrid>
 
-                {media.map((content) => (
+                {mediaItems.map((content) => (
                     <img src={content} alt="player gallery" />
                 ))}
 

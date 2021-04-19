@@ -3,7 +3,23 @@
 import styled from "styled-components"
 import { NavLink } from "react-router-dom";
 
-const Grid = ({ items, Image }) => (
+interface IGridItem {
+
+    url: string,
+    name: string,
+    imageURL : string
+
+
+}
+
+interface Props  {
+
+    items: Array<IGridItem>,
+    Image: any;
+
+}
+
+const Grid = ({ items, Image }: Props) => (
 
 
     <ItemGrid>

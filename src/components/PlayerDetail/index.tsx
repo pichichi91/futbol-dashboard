@@ -5,8 +5,19 @@ import { BiLinkExternal } from "react-icons/bi"
 import { CountDownWrapper } from "./NextGameCountdown";
 import { MediaGallery } from "./MediaGallery";
 
+interface IProfileData {
+    linkText: string;
+    linkUrl: string;
+    url: string;
+    name: string;
+    imageURL: string;
+ }
 
-const apiData = {}
+ interface ParamTypes {
+    id: string
+  }
+
+const apiData: { [id: string] : IProfileData; } =  {};
 
 
 apiData["lionelmessi"] = { linkText: "messi.com", linkUrl: "//messi.com",  url: "/players/lionelmessi", name: "Lionel Messi", imageURL: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSI96HKaXYUWoO1xZGNVx8oFd2mTETOcDsNZ8LWowgmRezLiNYKVjsRXJ05RCAV", 
@@ -16,7 +27,7 @@ const media = ["https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-
 
 
 const PlayerDetail = () => {
-    const { id } = useParams();
+    const { id } = useParams<ParamTypes>();
     const player = apiData[id];
 
     if (!player) return <>Sorry, this Player doesn't exist</>

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { ItemGrid } from "../components"
+import { ItemGrid } from "."
 
 
 

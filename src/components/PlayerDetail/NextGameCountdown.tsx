@@ -2,24 +2,27 @@
 import styled from "styled-components"
 import Countdown from 'react-countdown';
 
+interface Player {
+    name: string
+}
 
+interface Props {
+    player: Player
+}
 
-const TimeWrapper = styled.div`
-      display: flex;
-          justify-content: space-between;
-      `
+interface CountdownProps {
+    days: Number, 
+    hours: Number, 
+    minutes: Number, 
+    seconds: Number, 
+    completed: Boolean
+}
 
-const TimeWrapperItem = styled.div`
-      display: flex;
-          flex-direction: column;
-          text-align: center;
-      `
-
-const CountDownWrapper = ({ player }) => {
+const CountDownWrapper = ({ player }: Props) => {
 
     const Completionist = () => <span>{player.name} is playing now! Turn on the TV</span>;
 
-    const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    const renderer = ({ days, hours, minutes, seconds, completed }: CountdownProps) => {
         if (completed) {
             return <Completionist />;
         } else {
@@ -58,6 +61,18 @@ const CountDownWrapper = ({ player }) => {
     )
 
 }
+
+const TimeWrapper = styled.div`
+      display: flex;
+          justify-content: space-between;
+      `
+
+const TimeWrapperItem = styled.div`
+      display: flex;
+          flex-direction: column;
+          text-align: center;
+      `
+
 
 const NextGame = styled.div`
 font-size: 2em;

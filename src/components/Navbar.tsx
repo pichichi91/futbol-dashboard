@@ -17,7 +17,7 @@ const Navbar = () => {
 
       <Items>
 
-        <NavLink exact="true" to="/">
+        <NavLink exact={true} to="/">
           <ItemBox>
 
             <MdHome />
