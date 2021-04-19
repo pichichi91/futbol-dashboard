@@ -1,16 +1,24 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components"
-import { HiBadgeCheck } from "react-icons/hi"
-import { BiLinkExternal } from "react-icons/bi"
-import { CountDownWrapper } from "./NextGameCountdown";
+import { GameCountDown } from "./GameCountDown";
 import { MediaGallery } from "./MediaGallery";
+import {ClubListing} from "./ClubListing"
+import { UrlBox } from "./UrlBox";
+import { NewsBox } from "./NewsBox";
+import { Header } from "./Header";
 
+
+interface IClubInfo {
+    url: string,
+    imageURL: string;
+}
 interface IProfileData {
     linkText: string;
     linkUrl: string;
     url: string;
     name: string;
     imageURL: string;
+    teams: Array<IClubInfo>
  }
 
  interface ParamTypes {
@@ -20,7 +28,14 @@ interface IProfileData {
 const apiData: { [id: string] : IProfileData; } =  {};
 
 
-apiData["lionelmessi"] = { linkText: "messi.com", linkUrl: "//messi.com",  url: "/players/lionelmessi", name: "Lionel Messi", imageURL: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSI96HKaXYUWoO1xZGNVx8oFd2mTETOcDsNZ8LWowgmRezLiNYKVjsRXJ05RCAV", 
+apiData["lionelmessi"] = { 
+    linkText: "messi.com", 
+    linkUrl: "//messi.com",  
+    url: "/players/lionelmessi", 
+    name: "Lionel Messi", 
+    imageURL: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSI96HKaXYUWoO1xZGNVx8oFd2mTETOcDsNZ8LWowgmRezLiNYKVjsRXJ05RCAV", 
+    teams: [{ url: "/clubs/argentina", imageURL: "https://upload.wikimedia.org/wikipedia/de/thumb/0/00/Asociaci%C3%B3n-del-F%C3%BAtbol-Argentino-Logo.svg/1280px-Asociaci%C3%B3n-del-F%C3%BAtbol-Argentino-Logo.svg.png" },{ url: "/clubs/fcbarcelona", imageURL: "https://lh3.googleusercontent.com/OQZi4ckWAs7UrOlZEPefXZgJOcdJuSM5FSH9zqD5rMg6c2MOaxcKpV5IMrb1Tju98fWyNmcI33E4RGb0uC09Ej4W" }]
+ 
 }
 
 const media = ["https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-29.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-29.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-11.jpg", "https://messi.com/wp-content/uploads/2021/03/2021-03-21-R.-SOCIEDAD-BARCELONA-16.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-29.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-11.jpg", "https://messi.com/wp-content/uploads/2021/03/2021-03-21-R.-SOCIEDAD-BARCELONA-16.jpg",  "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-11.jpg", "https://messi.com/wp-content/uploads/2021/03/2021-03-21-R.-SOCIEDAD-BARCELONA-16.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-29.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-11.jpg", "https://messi.com/wp-content/uploads/2021/03/2021-03-21-R.-SOCIEDAD-BARCELONA-16.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-29.jpg", "https://messi.com/wp-content/uploads/2021/04/2021-04-05-ENTRENO-11.jpg", "https://messi.com/wp-content/uploads/2021/03/2021-03-21-R.-SOCIEDAD-BARCELONA-16.jpg"]
@@ -32,35 +47,25 @@ const PlayerDetail = () => {
 
     if (!player) return <>Sorry, this Player doesn't exist</>
 
+
+    const teams = player.teams;
     return (
         <Box>
 
-            <Row><Image src={player.imageURL}></Image></Row>
-            <Row>
-            <Name>
-            {player.name} <HiBadgeCheck /> </Name> 
-            </Row>
+            <Header player={player} />
+            <ClubListing teams={teams} />
 
-            <Row>
-            <BiLinkExternal style={{ fontSize: "2em", marginLeft: "0.25em", paddingTop: "8px"}} /> 
-            <ExternalLink href={player.linkUrl}>{player.linkText} </ExternalLink> 
-            </Row>
-            <Row>
-               
-            </Row>
-            <CountDownWrapper player={player} />
+            <UrlBox player={player} />
+            <GameCountDown player={player} />
             <MediaGallery media={media} />
 
-            <ContentRow>
-                <SubTitle>News</SubTitle>
-            </ContentRow>
+            <NewsBox />
 
            
         </Box>
     )
 
 }
-
 
 const Box = styled.div`
 
@@ -82,65 +87,4 @@ padding-right: 1em;
 
 `
 
-
-
-const SubTitle = styled.h2`
-font-size: 2em;
-font-weight: 900;
-
-`
-
-const ExternalLink = styled.a`
-color: #1271ed;
-font-size: 1.5em;
-border-bottom: 4px solid #1271ed;
-line-height: 1.3em;
-transition: all 0.2s ease-in-out;
-
-
-:hover{
-    color: black;
-    border-color: black
-}
-`
-
-const Name = styled.h1`
-font-weight: 900;
-font-size: 4em;
-margin-top: 0.5em;
-margin-bottom: 0.5em;
-text-align: center;
-
-svg {
-    display: inline;
-    color: #1271ed;
-    font-size: 0.75em
-}
-
-`
-
-const Row = styled.div`
-display: flex;
-justify-content: center;
-}
-
-`
-
-const ContentRow = styled.div`
-display: flex;
-justify-content: start;
-margin-top: 3em;
-flex-direction: column;
-}
-
-`
-
-const Image = styled.img`
-    object-fit: cover;
-    border-radius: 100%;
-    width: 300px;
-    height: 300px;
-    box-shadow: 1px 1px 20px rgb(0 0 0 / 62%);
-    margin-top: 1em;
-`
 export { PlayerDetail }

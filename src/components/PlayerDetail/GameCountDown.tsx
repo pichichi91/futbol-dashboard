@@ -18,7 +18,7 @@ interface CountdownProps {
     completed: Boolean
 }
 
-const CountDownWrapper = ({ player }: Props) => {
+const GameCountDown = ({ player }: Props) => {
 
     const Completionist = () => <span>{player.name} is playing now! Turn on the TV</span>;
 
@@ -65,12 +65,18 @@ const CountDownWrapper = ({ player }: Props) => {
 const TimeWrapper = styled.div`
       display: flex;
           justify-content: space-between;
+
+
       `
 
 const TimeWrapperItem = styled.div`
       display: flex;
           flex-direction: column;
           text-align: center;
+          @media screen and (max-width: 600px) {
+              
+            font-size: 0.8em;
+          }
       `
 
 
@@ -78,6 +84,10 @@ const NextGame = styled.div`
 font-size: 2em;
 text-align: center;
 font-weight:900;
+@media screen and (max-width: 600px) {
+margin-bottom: 0.5em;
+}
+
 `
 
 const Row = styled.div`
@@ -90,10 +100,11 @@ background: #a9a9a926;
 
 const CountdownItem = styled.div`
     margin-top: 2em;
-}
 
 @media screen and (max-width: 1100px) {
-    width: 80%;
+    width: 90%;
+    margin-bottom: 2em;
+
 }
 
 
@@ -110,4 +121,4 @@ strong {
 `
 
 
-export { CountDownWrapper };
+export { GameCountDown };
