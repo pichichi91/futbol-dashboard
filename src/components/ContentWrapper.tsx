@@ -28,12 +28,10 @@ const Content = styled.div`
 width: 100%;
 min-height: 100vh;
     padding: 80px;
-    margin-top: 4em;
     @media screen and (max-width: 600px) {
       padding: 10px;
       text-align: center;
       padding-top: 20px;
-      margin-top:0
 
 `
 

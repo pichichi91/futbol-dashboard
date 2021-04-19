@@ -19,8 +19,11 @@ const Navbar = () => {
 
         <NavLink exact={true} to="/">
           <ItemBox>
+          <SVGWrapper>
 
             <MdHome />
+            </SVGWrapper>
+
             <MenuText>Home</MenuText>
           </ItemBox>
 
@@ -31,15 +34,20 @@ const Navbar = () => {
 
 
 
+          <SVGWrapper>
 
             <GiSoccerKick />
+            </SVGWrapper>
+
             <MenuText>Profiles</MenuText>
           </ItemBox>
         </NavLink>
         <NavLink to="/clubs">
 
           <ItemBox>
-            <GiPoliceBadge />
+            <SVGWrapper>
+              <GiPoliceBadge />
+            </SVGWrapper>
             <MenuText>Clubs</MenuText>
           </ItemBox>
         </NavLink>
@@ -54,6 +62,16 @@ const Navbar = () => {
     </Nav>
   )
 }
+
+const SVGWrapper = styled.div`
+display: flex;
+    flex-direction: row;
+    @media screen and (max-width: 600px) {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    }
+
+`
 
 const MenuText = styled.div`
 text-align: center;
@@ -144,7 +162,8 @@ svg {
   opacity: 0.5;
   margin: 0 auto;
   font-size: 3em;
-  @media screen and (max-width: 600px) {
+
+
 font-size: 2em;
 }
 }

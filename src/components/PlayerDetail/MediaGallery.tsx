@@ -44,7 +44,7 @@ const MediaGrid = styled.div`
         border-radius: 10px;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
-
+        max-width: 100%;
         :hover {
             transform: translateY(-7px);
         }
