@@ -18,7 +18,7 @@ interface CountdownProps {
     completed: Boolean
 }
 
-const GameCountDown = ({ player }: Props) => {
+const NextGame = ({ player }: Props) => {
 
     const Completionist = () => <span>{player.name} is playing now! Turn on the TV</span>;
 
@@ -54,7 +54,7 @@ const GameCountDown = ({ player }: Props) => {
     return (
         <Row>
             <CountdownItem>
-                <NextGame>Next Game</NextGame>
+                <Title>Next Game</Title>
                 <Countdown date={Date.now() + 90000000} renderer={renderer} />
             </CountdownItem>
         </Row>
@@ -80,7 +80,7 @@ const TimeWrapperItem = styled.div`
       `
 
 
-const NextGame = styled.div`
+const Title = styled.div`
 font-size: 2em;
 text-align: center;
 font-weight:900;
@@ -120,4 +120,4 @@ strong {
 `
 
 
-export { GameCountDown };
+export { NextGame };

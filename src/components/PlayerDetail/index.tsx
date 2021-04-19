@@ -1,13 +1,11 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components"
-import { GameCountDown } from "./GameCountdown";
 import { MediaGallery } from "./MediaGallery";
 import {ClubListing} from "./ClubListing"
 import { UrlBox } from "./UrlBox";
 import { NewsBox } from "./NewsBox";
 import { Header } from "./Header";
-
-
+import {NextGame} from "./NextGame";
 interface IClubInfo {
     url: string,
     imageURL: string;
@@ -56,7 +54,7 @@ const PlayerDetail = () => {
             <ClubListing teams={teams} />
 
             <UrlBox player={player} />
-            <GameCountDown player={player} />
+            <NextGame player={player} />
             <MediaGallery media={media} />
 
             <NewsBox />
