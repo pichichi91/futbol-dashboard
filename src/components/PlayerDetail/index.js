@@ -130,5 +130,6 @@ const Image = styled.img`
     width: 300px;
     height: 300px;
     box-shadow: 1px 1px 20px rgb(0 0 0 / 62%);
+    margin-top: 1em;
 `
 export { PlayerDetail }
