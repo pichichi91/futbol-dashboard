@@ -52,6 +52,8 @@ font-size: 1.2em
 
 const Item = styled.div`
 display: flex;
+ margin-right: 3em;
+margin-top: 4em;
 flex-direction: column;
     align-items: center;
     text-align: center;
@@ -63,11 +65,10 @@ flex-direction: column;
 `
 
 const ItemGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    column-gap: 40px;
-    row-gap: 120px;
-    margin-top: 50px;
+display: flex;
+    justify-content: flex-start;
+flex-wrap: wrap;
+    margin-top: 3em;
 `
 
 export { Grid };
