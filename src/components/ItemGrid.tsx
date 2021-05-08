@@ -2,12 +2,11 @@
 
 import styled from "styled-components"
 import { NavLink } from "react-router-dom";
-
 interface IGridItem {
 
     url: string,
     name: string,
-    imageURL : string
+    image : string
 
 
 }
@@ -15,19 +14,21 @@ interface IGridItem {
 interface Props  {
 
     items: Array<IGridItem>,
-    Image: any;
+    Image: any,
 
 }
 
-const Grid = ({ items, Image }: Props) => (
+const Grid = ({ items, Image }: Props) => {
 
 
-    <ItemGrid>
-        {items.map((item) => (
-            <Item>
+    
+
+    return (<ItemGrid>
+        { items.map((item) => (
+            <Item key={item.name}>
                 <div>
                     <NavLink to={item.url}>
-                        <Image src={item.imageURL} />
+                        <Image src={item.image} />
                     </NavLink>
 
                 </div>
@@ -39,7 +40,7 @@ const Grid = ({ items, Image }: Props) => (
         ))}
     </ItemGrid>
 
-)
+)}
 
 const Name = styled.div`
 margin-top: 1em;

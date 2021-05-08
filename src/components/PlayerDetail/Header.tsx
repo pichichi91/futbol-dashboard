@@ -2,7 +2,7 @@ import { HiBadgeCheck } from "react-icons/hi"
 import styled from "styled-components"
 interface IPlayer {
     name: string,
-    imageURL: string;
+    image: string;
 }
 interface Props {
     player: IPlayer;
@@ -10,7 +10,7 @@ interface Props {
 const Header = ({player}: Props) => (
     <>
         <Flex>
-            <Image src={player.imageURL} />
+            <Image src={player.image} />
         </Flex>
         <Flex>
             <Name>

@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
-const Home = () => (
+const Home = () => {
+    
+    console.log("URL: " + process.env.REACT_APP_SANITY_GRAPHQL_URL)
+    return(
 
     <Flex>
 
@@ -20,7 +23,7 @@ const Home = () => (
             </ButtonBox>
         </Container>
     </Flex>
-)
+)}
 
 
 const ButtonBox = styled.div`
