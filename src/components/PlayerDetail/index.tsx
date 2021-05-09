@@ -51,10 +51,11 @@ const PlayerDetail = () => {
     }, [id])
 
     const player:any = profile[0];
-    const teams = player.team;
 
     if(!hasLoaded) return <Loader />
     if (!player) return <>Sorry, this Player doesn't exist</>
+
+    const teams = player.team;
 
     return (
         <Box>
