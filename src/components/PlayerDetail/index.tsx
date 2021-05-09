@@ -36,14 +36,13 @@ const PlayerDetail = () => {
             if(result.data.allProfile ){
                 const {allProfile} =  result.data;
                 const profileResult = allProfile.map((item: any) => {
-                    console.log(item)
                     const name = item.name
                     const url = "clubs/" + item.slug.current
                     const image = item.image.asset.url
 
                     const linkUrl = item.WebsiteURL
                     const linkText = item.Website 
-                    const club = {image: item.team.image.asset.url, url: item.team.slug.current };
+                    const club = {image: item.team.image.asset.url, url: "/clubs/" + item.team.slug.current };
                     const nationalTeam = { };
 
                     return { name, url, image, linkUrl, linkText, club, nationalTeam}
