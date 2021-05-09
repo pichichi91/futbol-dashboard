@@ -11,6 +11,7 @@ import { Header } from "./Header";
 import {NextGame} from "./NextGame";
 import {client} from "../../lib/graphql/client"
 import {playerDetail} from "../../lib/graphql/queries"
+import { Loader } from "../Loader";
 
 
 
@@ -45,10 +46,8 @@ const PlayerDetail = () => {
             slug: id
             }
         }).then((result: any) => {
-            console.log(result)
 
             if(result.data.allProfile ){
-                console.log(result)
                 const {allProfile} =  result.data;
 
                 const profileResult = allProfile.map((item: any) => {
@@ -61,7 +60,7 @@ const PlayerDetail = () => {
                     return { name, url, image, linkUrl, linkText}
                 })
                 setProfile(profileResult)
-                setHasLoaded(true)
+               setHasLoaded(true)
             }
         });
     }, [id])
@@ -70,7 +69,7 @@ const PlayerDetail = () => {
 
     const player:any = profile[0];
 
-    if(!hasLoaded) return <>Loading...</>
+    if(!hasLoaded) return <Loader />
     if (!player) return <>Sorry, this Player doesn't exist</>
 
 
@@ -80,14 +79,10 @@ const PlayerDetail = () => {
 
             <Header player={player} />
             <ClubListing teams={teams} />
-
             <UrlBox player={player} />
             <NextGame player={player} />
             <MediaGallery media={media} />
-
             <NewsBox />
-
-           
         </Box>
     )
 
