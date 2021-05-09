@@ -76,22 +76,7 @@ const MenuText = styled.div`
 text-align: center;
 `
 
-const Logo = styled.img`
-  width: 70%;
-  height: 70%;
-  opacity: 0.5;
-  transition: all 0.2s ease-in-out;
-  :hover {
-    opacity: 1;
-  }
 
-  @media screen and (max-width: 600px) {
-    width: 50px;
-    display: none;
-
-  height: auto;
-  }
-`
 const LogoBox = styled.div`
 
 @media screen and (max-width: 600px) {
