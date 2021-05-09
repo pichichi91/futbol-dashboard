@@ -3,14 +3,15 @@ import styled from "styled-components"
 const packages = [
 
     "@apollo",
-    "typescript",
+    "graphql",
     "svg-loaders-react",
     "styled-components",
     "simple-react-lightbox",
     "react-router-dom",
     "react-icons",
     "react-countdown",
-    "graphql"
+    "styled-components",
+    "typescript"
 ]
 
 
