@@ -1,92 +1,94 @@
 import styled from "styled-components"
 
+const packages = [
+
+    "@apollo",
+    "typescript",
+    "svg-loaders-react",
+    "styled-components",
+    "simple-react-lightbox",
+    "react-router-dom",
+    "react-icons",
+    "react-countdown",
+    "graphql"
+]
+
+
+
 const Home = () => {
-    
-    console.log("URL: " + process.env.REACT_APP_SANITY_GRAPHQL_URL)
     return(
 
     <Flex>
 
         <Container>
-            <Image src="https://gloria.app/images/60270b98347779b9bc4deb07_gloria-logo-site.png" />
             <Subtitle>
-                The new platform for all football lovers. Now in beta on iOS.
+                This is a <span>Create React App</span> - most data is stored on a backend on <span>sanity.io</span> and queried over GraphQL
+
 
             </Subtitle>
-            <Description>
-                Chat about your favorite players and teams. Watch awesome videos. Show your skills and share your passion for the game. <strong>All in one place.</strong>
+            <Info>
+                In a first version the only goal is to display profiles of football <strong>players </strong> and <strong>clubs</strong>
+               The following packages have been used for that:
+
+    
+            </Info>
+
+            <PackageListing>
+            <ul>
+                   {packages.map((usedPackage:string) => <li key={usedPackage}>{usedPackage}</li>) }
+               </ul>
+               </PackageListing>
 
 
-            </Description>
-            <ButtonBox>
-                <Button>Get Access via TestFlight</Button>
-            </ButtonBox>
+
         </Container>
     </Flex>
 )}
 
 
-const ButtonBox = styled.div`
-display: flex;
-justify-content: center;
-margin-top: 3em;
-`
-
-const Button = styled.button`
-border-radius: 20px;
-border: 1px solid transparent;
-padding: 1em 2em;
-margin-top: 1em;
-background: #1271ed;
-font-weight: 700;
-
-color: white;
-box-shadow: 0 0px 12px rgb(0 0 0 / 20%);
-:hover {
-    background: white;
-color: #1271ed;
-border-color: #1271ed;
-}
-
-@media screen and (max-width: 800px) {
-margin-bottom: 1em;
-}
 
 
-`
-
-const Image = styled.img`
-    align-self: center;
-    width: 100%;
-    @media screen and (max-width: 800px) {
-        margin-top: 1em;
-        max-width: 100%;
-    }
-
-
-`
-const Description = styled.div`
-
-    margin-top: 4em;
-    padding:1.5em;
+const PackageListing = styled.div`
+display:flex;
+justify-content: space-around;
+ul {
+    margin: 2em;
+    padding: 3em;
     border-radius: 10px;
-    border: 1px solid #1271ed;
-    color: black;
-    font-size: 1.2em;
-    text-align: center;
-    color: #1271ed;
-    font-weight: 400;
-    box-shadow: 0 0px 20px rgb(18 113 237 / 30%);
-    `
+    background-color: gray;
+    background-color: #f1f1f1;
+    padding-right: 5em;
+    padding-left: 5em;
+
+
+}
+
+li {
+    list-style: none;
+}
+`
+
+
+const Info = styled.div`
+text-align: center;
+
+`
 
 const Subtitle = styled.h2`
 font-size: 2.5em;
 font-weight: 900;
 text-align: center;
-color: #1271ed;
+color: #black;
+margin-bottom: 2em;
 @media screen and (max-width: 800px) {
     font-size: 2em;
     margin-top: 1em;
+}
+
+span {
+    color: #1271ed;
+    background-image: linear-gradient(180deg,transparent 60%,rgb(18 113 237 / 30%) 0);
+
 }
 `
 
@@ -103,6 +105,7 @@ width: 80%
 const Flex = styled.div` 
 display: flex;
 justify-content: center;
+margin-top: 5em;
 @media screen and (max-width: 800px) {
     overflow-y: scroll;
     max-height: calc(100vh - 95px );

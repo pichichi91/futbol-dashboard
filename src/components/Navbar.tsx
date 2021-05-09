@@ -1,4 +1,3 @@
-import logo from '../logo.png';
 import styled from "styled-components"
 
 import { FiGithub as GithubIcon } from 'react-icons/fi';
@@ -10,7 +9,7 @@ const Navbar = () => {
   return (
     <Nav >
       <LogoBox>
-        <a href="//gloria.app"> <Logo src={logo} alt="logo" /></a>
+        
 
 
       </LogoBox>
@@ -55,7 +54,7 @@ const Navbar = () => {
       </Items>
 
       <Repository>
-        <a href="//github.com/pichichi91/gloria-player"> <GithubIcon /></a>
+        <a href="//github.com/pichichi91/futbol-dashoboard"> <GithubIcon /></a>
 
       </Repository>
 
