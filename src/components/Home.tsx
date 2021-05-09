@@ -28,8 +28,7 @@ const Home = () => {
 
             </Subtitle>
             <Info>
-                In a first version the only goal is to display profiles of football <strong>players </strong> and <strong>clubs</strong>
-               The following packages have been used for that:
+                In a first version the only goal is to display profiles of football <strong>players </strong> and <strong>clubs</strong>. The following packages have been used for that:
 
     
             </Info>
@@ -54,12 +53,16 @@ display:flex;
 justify-content: space-around;
 ul {
     margin: 2em;
-    padding: 3em;
+    padding: 1em;
     border-radius: 10px;
     background-color: gray;
     background-color: #f1f1f1;
     padding-right: 5em;
     padding-left: 5em;
+    @media screen and (max-width: 800px) {
+        padding-right: 2em;
+        padding-left: 2em;
+    }
 
 
 }
@@ -79,11 +82,10 @@ const Subtitle = styled.h2`
 font-size: 2.5em;
 font-weight: 900;
 text-align: center;
-color: #black;
 margin-bottom: 2em;
 @media screen and (max-width: 800px) {
     font-size: 2em;
-    margin-top: 1em;
+    margin-top: 3m;
 }
 
 span {
@@ -108,8 +110,10 @@ display: flex;
 justify-content: center;
 margin-top: 5em;
 @media screen and (max-width: 800px) {
+    margin-top: 0em;
+
     overflow-y: scroll;
-    max-height: calc(100vh - 95px );
+    max-height: calc(100vh - 45px );
     margin-bottom: 1em
     }
     ::-webkit-scrollbar {
