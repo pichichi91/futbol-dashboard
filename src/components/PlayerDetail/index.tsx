@@ -58,8 +58,6 @@ const PlayerDetail = () => {
     if(!hasLoaded) return <Loader />
     if (!player) return <>Sorry, this Player doesn't exist</>
 
-    const teams = player.team;
-
     return (
         <Box>
 
