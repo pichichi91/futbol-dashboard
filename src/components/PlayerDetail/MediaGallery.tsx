@@ -14,7 +14,7 @@ const MediaGallery = ({ media: mediaItems }: Props) => (
             <MediaGrid>
 
                 {mediaItems.map((content) => (
-                    <img src={content} alt="player gallery" />
+                    <img key={Math.random()} src={content} alt="player gallery" />
                 ))}
 
             </MediaGrid>

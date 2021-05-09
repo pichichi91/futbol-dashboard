@@ -36,13 +36,17 @@ const PlayerDetail = () => {
             if(result.data.allProfile ){
                 const {allProfile} =  result.data;
                 const profileResult = allProfile.map((item: any) => {
+                    console.log(item)
                     const name = item.name
                     const url = "clubs/" + item.slug.current
                     const image = item.image.asset.url
 
                     const linkUrl = item.WebsiteURL
                     const linkText = item.Website 
-                    return { name, url, image, linkUrl, linkText}
+                    const club = {image: item.team.image.asset.url, url: item.team.slug.current };
+                    const nationalTeam = { };
+
+                    return { name, url, image, linkUrl, linkText, club, nationalTeam}
                 })
                 setProfile(profileResult)
                setHasLoaded(true)
@@ -61,7 +65,7 @@ const PlayerDetail = () => {
         <Box>
 
             <Header player={player} />
-            <ClubListing teams={teams} />
+            <ClubListing club={player.club} />
             <UrlBox player={player} />
             <NextGame player={player} />
             <MediaGallery media={media} />

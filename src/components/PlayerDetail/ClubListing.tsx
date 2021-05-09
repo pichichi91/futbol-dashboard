@@ -2,24 +2,26 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components"
 
 interface Props {
-    teams: Array<IClubInfo>
+    club: IClubInfo
 }
 interface IClubInfo {
     url: string,
-    imageURL: string;
+    image: string;
 }
 
-const ClubListing = ({teams}: Props) => {
-    if(!teams) return(<></>)
+const ClubListing = ({club}: Props) => {
+    if(!club) return(<></>)
+
 
     return(
         <Row>
             <Clublist>
-                {teams.map((team) => (
-                    <NavLink key={team.url} to={team.url}>
-                        <ClubImage src={team.imageURL} />
+                
+                    <NavLink key={club.url} to={club.url}>
+                        <ClubImage src={club.image} />
                     </NavLink>
-                ))}
+
+             
             </Clublist>
         </Row>
      )
@@ -34,7 +36,7 @@ justify-content: center;
 `
 const Clublist = styled.div`
 display: flex;
-justify-content: space-between;
+justify-content: center;
 margin-bottom: 2em;
 
 width: 300px;

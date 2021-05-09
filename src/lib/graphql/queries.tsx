@@ -56,9 +56,12 @@ const allPlayers = gql`{
         }
         team {
           name
+          slug {
+            current
+          }
           image{
             asset{
-              path
+              url
             }
           }
         }
