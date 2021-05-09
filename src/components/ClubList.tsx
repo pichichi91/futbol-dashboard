@@ -30,7 +30,6 @@ const ClubList = () => {
         <Box>
             <Title>Top Clubs</Title>
             <ItemGrid items={clubs} Image={Image} />
-            <ItemGrid  items={clubs} Image={Image} />
         </Box>
     );
 }
