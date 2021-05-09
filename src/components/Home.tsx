@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const packages = [
 
-    "@apollo",
+    "apollo",
     "graphql",
     "svg-loaders-react",
     "styled-components",
