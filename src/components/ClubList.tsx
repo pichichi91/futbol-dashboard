@@ -2,21 +2,17 @@ import styled from "styled-components"
 import {useEffect, useState} from "react"
 import {client} from "../lib/graphql/client"
 import {allTeams} from "../lib/graphql/queries"
-
+import { Loader } from "./Loader";
 import { ItemGrid } from "."
-
-
 
 const ClubList = () => {
     const [clubs, setClubs] = useState([]);
-
+    const [hasLoaded, setHasLoaded] = useState(false);
     useEffect(() => {
 
         client.query({query: allTeams}).then((result: any) => {
             if(result.data.allTeam ){
-                console.log(result)
                 const {allTeam} =  result.data;
-
                 const results = allTeam.map((item: any) => {
                     const name = item.name
                     const url = "clubs/" + item.slug.current
@@ -24,15 +20,16 @@ const ClubList = () => {
                     return { name, url, image}
                 })
                 setClubs(results)
+                setHasLoaded(true)
             }
         });
     }, [])
 
-
-
+    if(!hasLoaded) return <Loader />
     return (
         <Box>
             <Title>Top Clubs</Title>
+            <ItemGrid items={clubs} Image={Image} />
             <ItemGrid  items={clubs} Image={Image} />
         </Box>
     );

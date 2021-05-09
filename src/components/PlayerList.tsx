@@ -3,10 +3,12 @@ import { ItemGrid } from "."
 import {useEffect, useState} from "react"
 import {client} from "../lib/graphql/client"
 import {allPlayers} from "../lib/graphql/queries"
+import { Loader } from "./Loader";
 
 const PlayerList = () => {
 
     const [profiles, setProfiles] = useState([]);
+    const [hasLoaded, setHasLoaded] = useState(false);
 
 
     useEffect(() => {
@@ -21,10 +23,13 @@ const PlayerList = () => {
                     return { name, url, image}
                 })
                 setProfiles(results)
+                setHasLoaded(true)
+
             }
         });
     }, [])
 
+    if(!hasLoaded) return <Loader />
 
 
     return (
