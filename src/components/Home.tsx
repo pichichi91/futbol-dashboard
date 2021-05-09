@@ -52,13 +52,13 @@ const PackageListing = styled.div`
 display:flex;
 justify-content: space-around;
 ul {
-    margin: 2em;
-    padding: 1em;
     border-radius: 10px;
     background-color: gray;
     background-color: #f1f1f1;
     padding-right: 5em;
     padding-left: 5em;
+    padding: 1em;
+    margin-top: 3em;
     @media screen and (max-width: 800px) {
         padding-right: 2em;
         padding-left: 2em;
@@ -69,6 +69,10 @@ ul {
 
 li {
     list-style: none;
+    text-align: left;
+    font-family: monospace;
+    font-size: 1.25em;
+
 }
 `
 
