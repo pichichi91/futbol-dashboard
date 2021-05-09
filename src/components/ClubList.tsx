@@ -61,11 +61,12 @@ line-height: 1;
 `
 
 const Image = styled.img`
-width: 150px;
-height: 150px;
+width: 200px;
+height: 200px;
 object-fit: scale-down;
 
 `
+
 
 
 export { ClubList };

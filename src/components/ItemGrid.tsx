@@ -53,6 +53,10 @@ font-size: 1.2em
 const Item = styled.div`
 display: flex;
  margin-right: 3em;
+ @media screen and (max-width: 600px) {
+    margin-right: 1.5em;
+
+ }
 margin-top: 4em;
 flex-direction: column;
     align-items: center;
@@ -66,7 +70,12 @@ flex-direction: column;
 
 const ItemGrid = styled.div`
 display: flex;
-    justify-content: flex-start;
+justify-content: flex-start;
+
+@media screen and (max-width: 600px) {
+    justify-content: center;
+
+}
 flex-wrap: wrap;
     margin-top: 3em;
 `
