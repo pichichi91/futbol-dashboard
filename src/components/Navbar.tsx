@@ -54,7 +54,7 @@ const Navbar = () => {
       </Items>
 
       <Repository>
-        <a href="//github.com/pichichi91/futbol-dashoboard"> <GithubIcon /></a>
+        <a href="//github.com/pichichi91/futbol-dashboard"> <GithubIcon /></a>
 
       </Repository>
 
